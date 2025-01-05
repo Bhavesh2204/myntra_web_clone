@@ -1,5 +1,7 @@
 import React from 'react';
 
+//this is for testing
+
 const HomeLivingPage: React.FC = () => {
   const categories = [
     { name: 'Furniture', image: 'https://st.hzcdn.com/simgs/pictures/living-rooms/dyna-portage-bay-dyna-contracting-img~0c7141880048befb_14-0031-1-27a4125.jpg' },
