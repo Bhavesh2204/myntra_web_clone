@@ -2,7 +2,7 @@ import React from 'react';
 
 const WomenPage: React.FC = () => {
   const categories = [
-    { name: 'Dresses', image: 'https://img.freepik.com/premium-photo/horizontal-image-attractive-brunette-young-woman-with-white-hat-head-walking-beach-sea-sunset-background-pretty-female-wearing-striped-dress-enjoy-ocean-breeze_616427-1448.jpg'  },
+    { name: 'Dresses', image: 'https://img.freepik.com/premium-photo/horizontal-image-attractive-brunette-young-woman-with-white-hat-head-walking-beach-sea-sunset-background-pretty-female-wearing-striped-dress-enjoy-ocean-breeze_616427-1448.jpg' },
     { name: 'Tops', image: 'https://cdn01.pinkoi.com/product/k7uLiqdS/0/2/640x530.jpg' },
     { name: 'Jeans', image: 'https://media.istockphoto.com/id/1349960077/photo/rocking-denim-wear.jpg?s=612x612&w=0&k=20&c=fB3hzEp_aOF2lk6QmMW4sUGDiQhhQkgwQ9OOO3VlDHc=' },
     { name: 'Shoes', image: 'https://media.istockphoto.com/id/1339440288/photo/white-sneakers-shoes-and-girl%C3%A2s-legs-on-nude-background-casual-footwear.jpg?s=612x612&w=0&k=20&c=huKyqMekfhKH7uY7XWmyi2LI7mJuctzNhOAKjbrlReU=' },
@@ -16,106 +16,95 @@ const WomenPage: React.FC = () => {
   ];
 
   return (
-    <div className="w-full">
-      {/* Banner Section */}
-      <div className="relative w-full" style={{ height: '426px', backgroundColor: '#3B82F6', color: '#FFFFFF' }}>
-        <div className="absolute inset-0">
-          <img
-            src={'src/assets/Components/images/womenpage.png'}
-            alt="Women's Banner"
-            className="w-full h-full object-cover"
-            style={{ height: '453px' }}
-          />
-        </div>
-      </div>
+    <div className="font-sans text-gray-800">
+      {/* 🚀 Hero Section */}
+<section className="relative w-full h-[600px] overflow-hidden">
+  <div className="absolute inset-0 z-0">
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/048/912/903/non_2x/stylish-modern-girl-feeling-satisfaction-while-shopping-posing-with-money-dollars-and-shop-bags-beige-studio-background-photo.jpg"
+      alt="Women's Fashion"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-transparent to-gray-900 opacity-70"></div>
+  </div>
+  <div className="relative z-10 flex flex-col justify-center h-full px-8 md:px-20 text-white">
+    <h1 className="text-5xl md:text-7xl font-extrabold leading-tight max-w-[50%]">Empower Your Style</h1>
+    <p className="text-lg md:text-2xl mt-4 mb-6 max-w-[50%]">
+      Discover premium fashion tailored just for you.
+    </p>
+    <div className="max-w-[50%]">
+      <button className="bg-pink-500 hover:bg-pink-600 text-white font-semibold px-4 py-2 rounded-md shadow-md text-sm">
+        Explore Now
+      </button>
+    </div>
+  </div>
+</section>
 
-      {/* Categories Section */}
-      <div className="container mx-auto py-10">
-        <h2 className="text-3xl font-bold text-center mb-8">Shop by Category</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+      {/* 🛍️ Shop by Category */}
+      <section className="py-16 bg-gray-50">
+        <h2 className="text-4xl font-bold text-center mb-12">🛍️ Shop by Category</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-8">
           {categories.map((category, index) => (
-            <div key={index} className="bg-white shadow-md rounded-md overflow-hidden">
+            <div key={index} className="group relative rounded-xl overflow-hidden shadow-lg">
               <img
                 src={category.image}
                 alt={category.name}
-                className="w-full h-48" // Add `object-cover` to make the image fill the box while maintaining aspect ratio
+                className="w-full h-64 object-cover transition-transform transform group-hover:scale-110"
               />
-              <div className="p-4 text-center">
-                <p className="text-lg font-semibold">{category.name}</p>
+              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                <p className="text-white text-lg font-semibold">{category.name}</p>
               </div>
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      {/* Featured Products Section */}
-      <div className="container mx-auto py-10">
-        <h2 className="text-3xl font-bold text-center mb-8">Featured Products</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+      {/* ✨ Featured Products */}
+      <section className="py-16">
+        <h2 className="text-4xl font-bold text-center mb-12">✨ Featured Products</h2>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-8">
           {featuredProducts.map((product, index) => (
-            <div key={index} className="bg-white shadow-md rounded-md overflow-hidden">
+            <div key={index} className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-48 object-cover" // Add `object-cover` here as well
+                className="w-full h-64 object-cover"
               />
-              <div className="p-4 text-center">
-                <p className="text-lg font-semibold">{product.name}</p>
-                <p className="text-sm text-gray-500">{product.price}</p>
+              <div className="p-4 bg-white">
+                <p className="text-xl font-bold">{product.name}</p>
+                <p className="text-gray-600">{product.price}</p>
               </div>
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      {/* Trending Collections Section */}
-      <div className="bg-gray-100 py-10">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Trending Collections</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white shadow-md rounded-md overflow-hidden">
-              <img
-                src="https://i0.wp.com/flourish-living.com/wp-content/uploads/2019/07/10-Sustainable-Summer-Fashion-Brands-for-the-Conscious-Girl.jpg?resize=960%2C640"
-                alt="Summer Collection"
-                className="w-full h-48 object-cover" // Again, `object-cover` for consistent fitting
-              />
-              <div className="p-4 text-center">
-                <p className="text-lg font-semibold">Summer Collection</p>
-              </div>
-            </div>
-            <div className="bg-white shadow-md rounded-md overflow-hidden">
-              <img
-                src="https://img.freepik.com/free-photo/good-looking-tender-millennial-woman-keeps-hands-chin-smiles-toothily-wears-hat-sweater-looks-happily-listens-pleasant-words-isolated-pink-background-human-emotions-face-expressions_273609-58370.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1722902400&semt=ais_hybrid"
-                alt="Winter Collection"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 text-center">
-                <p className="text-lg font-semibold">Winter Collection</p>
-              </div>
-            </div>
-            <div className="bg-white shadow-md rounded-md overflow-hidden">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_Q1KpRsnHoOBv9HNzINPGACllk3vnCWykGJSS1eLWV3WYnANq8335k7IqdJb-xnp22_M&usqp=CAU"
-                alt="Accessories Collection"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4 text-center">
-                <p className="text-lg font-semibold">Accessories</p>
-              </div>
-            </div>
+      {/* 🔥 Call to Action */}
+      <section className="py-12 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center">
+        <h2 className="text-4xl font-bold mb-4">🔥 Limited-Time Offer</h2>
+        <p className="text-lg mb-8">Get exclusive discounts on our best-selling collections.</p>
+        <button className="bg-white text-purple-500 hover:text-purple-600 font-bold px-6 py-3 rounded-md">Grab the Deal</button>
+      </section>
+
+      {/* 🌟 Customer Testimonials */}
+      <section className="py-16 bg-gray-50">
+        <h2 className="text-4xl font-bold text-center mb-12">🌟 What Our Customers Say</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-8">
+          <div className="p-6 bg-white shadow-md rounded-md">
+            <p className="text-gray-600">"Amazing quality and fantastic service! Highly recommend!"</p>
+            <p className="mt-4 font-bold">- Sarah K.</p>
+          </div>
+          <div className="p-6 bg-white shadow-md rounded-md">
+            <p className="text-gray-600">"The best shopping experience I've ever had. Love the style!"</p>
+            <p className="mt-4 font-bold">- Emily R.</p>
+          </div>
+          <div className="p-6 bg-white shadow-md rounded-md">
+            <p className="text-gray-600">"Trendy, stylish, and affordable. Will shop again!"</p>
+            <p className="mt-4 font-bold">- Jessica T.</p>
           </div>
         </div>
-      </div>
-
-      {/* Call to Action Section */}
-      <div className="container mx-auto py-10">
-        <div className="bg-blue-500 text-white rounded-md p-8 flex items-center justify-between">
-          <h2 className="text-2xl font-bold">Special Offers Just for You</h2>
-          <button className="bg-white text-blue-500 font-semibold py-2 px-4 rounded-md">
-            Shop Now
-          </button>
-        </div>
-      </div>
+      </section>
     </div>
   );
 };

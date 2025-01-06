@@ -97,28 +97,28 @@ const NBar: React.FC = () => {
     </Menu>
   );
 
-  const beautyMenu = (
-    <Menu>
-      <Menu.Item key="1">
-        <a href="#">Makeup</a>
-      </Menu.Item>
-      <Menu.Item key="2">
-        <a href="#">Skincare</a>
-      </Menu.Item>
-      <Menu.Item key="3">
-        <a href="#">Haircare</a>
-      </Menu.Item>
-      <Menu.Item key="4">
-        <a href="#">Fragrances</a>
-      </Menu.Item>
-      <Menu.Item key="5">
-        <a href="#">Tools</a>
-      </Menu.Item>
-      <Menu.Item key="6">
-        <a href="#">Accessories</a>
-      </Menu.Item>
-    </Menu>
-  );
+  // const beautyMenu = (
+  //   <Menu>
+  //     <Menu.Item key="1">
+  //       <a href="#">Makeup</a>
+  //     </Menu.Item>
+  //     <Menu.Item key="2">
+  //       <a href="#">Skincare</a>
+  //     </Menu.Item>
+  //     <Menu.Item key="3">
+  //       <a href="#">Haircare</a>
+  //     </Menu.Item>
+  //     <Menu.Item key="4">
+  //       <a href="#">Fragrances</a>
+  //     </Menu.Item>
+  //     <Menu.Item key="5">
+  //       <a href="#">Tools</a>
+  //     </Menu.Item>
+  //     <Menu.Item key="6">
+  //       <a href="#">Accessories</a>
+  //     </Menu.Item>
+  //   </Menu>
+  // );
 
   return (
     <div className="bg-white shadow-md">
@@ -152,11 +152,11 @@ const NBar: React.FC = () => {
               Home & Living
             </Link>
           </Dropdown>
-          <Dropdown overlay={beautyMenu} trigger={['hover']} overlayClassName="dropdown-menu">
+          {/* <Dropdown overlay={beautyMenu} trigger={['hover']} overlayClassName="dropdown-menu">
             <Link to="/beauty" className="text-gray-700 hover:text-blue-500">
               Beauty
             </Link>
-          </Dropdown>
+          </Dropdown> */}
           <a href="#" className="text-gray-700 hover:text-blue-500">Studio</a>
         </div>
 
